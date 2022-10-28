@@ -9,9 +9,9 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 const homeRouter = require('./routes/unauthenticated/index');
-const authenticationRouter = require('./routes/unauthenticated/authenticated');
+const authenticationRouter = require('./routes/unauthenticated/authentication');
 const lobbyRouter = require('./routes/authenticated/lobby');
-const gamesRouter = require('./routes/authenticated/lobby');
+const gamesRouter = require('./routes/authenticated/games');
 
 
 const testsRouter = require('./routes/tests');

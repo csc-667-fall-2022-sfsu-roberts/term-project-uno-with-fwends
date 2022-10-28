@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', (_request, _response) => {
+router.get('/', (req, res) => {
   res.render('authenticated/lobby', { });
 });
 
