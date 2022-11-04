@@ -1,21 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET Home page. */
-router.get('/', (request, res) => {
-    res.render('unauthenticated/index', { });
+/* GET Home page. 
+router.get('/', (_request, response) => {
+    response.render('unauthenticated/index', { });
   });
-
+*/
   /* GET signup page. */
-router.get('/signup', (req, res) => {
-    res.render('unauthenticated/signup', { });
+router.get('/signup', (_request, response) => {
+    response.render('unauthenticated/signup', { });
   });
   
   /* GET login page. */
-  router.get('/login', (req, res) => {
-      res.render('unauthenticated/login', { });
+  router.get('/login', (_request, response) => {
+      response.render('unauthenticated/login', { });
     });
-
-
 
 module.exports = router;
