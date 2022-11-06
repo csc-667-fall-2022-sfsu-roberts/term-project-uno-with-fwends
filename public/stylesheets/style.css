@@ -1,8 +1,74 @@
-body {
+.card {
+  background-image: url("/images/uno_cards_sprite.png");
+  height: 258px; 
+  width: 176px;
+}
+
+.red {
+  background-position-y: 0px;
+}
+
+.blue {
+  background-position-y: -285px;
+}
+
+.yellow {
+  background-position-y: -570px;
+}
+
+.green {
+  background-position-y: -855px;
+}
+
+.black {
+  background-position-y: -1140px;
+}
+
+/* select cards by x and y position */
+
+
+.one {
+  background-position-x: -200px;
+}
+
+.two {
+  background-position-x: -400px;
+}
+
+.three {
+  background-position-x: -600px;
+}
+
+.four {
+  background-position-x: -800px;
+}
+
+.five {
+  background-position-x: -1000px;
+}
+
+.special {
+  background-position-x: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-}
+} */
