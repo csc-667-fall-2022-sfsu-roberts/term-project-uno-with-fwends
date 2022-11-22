@@ -1,7 +1,30 @@
+
+player-hand{
+  position: relative; 
+
+}
+
 .card {
+  position: absolute;
   background-image: url("/images/uno_cards_sprite.png");
   height: 258px; 
   width: 176px;
+}
+
+.card:nth-child(2){
+  left: 30px; 
+}
+.card:nth-child(3){
+  left: 60px; 
+}
+.card:nth-child(4){
+  left: 90px; 
+}
+.card:nth-child(5){
+  left: 120px; 
+}
+.card:nth-child(6){
+  left: 150px; 
 }
 
 .red {
