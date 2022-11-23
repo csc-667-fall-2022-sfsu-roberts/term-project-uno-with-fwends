@@ -9,11 +9,11 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     return queryInterface.createTable(
-      "users", 
+      'users', 
       {
         id: {
           type: Sequelize.INTEGER,
-          primaryKEy: true, 
+          primaryKey: true, 
           autoIncrement: true,
         },
         email: {
@@ -26,19 +26,19 @@ module.exports = {
         },
         created_at: {
           type: Sequelize.DATE,
-          defaultValue: Sequelize.literal("NOW()"),
+          defaultValue: Sequelize.literal('NOW()'),
           allowNull: false,
       }
     });
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.dropTable("users");
+    return queryInterface.dropTable('users');
     /**
      * Add reverting commands here.
      *
      * Example:
      * await queryInterface.dropTable('users');
      */
-  },
+  }
 };
