@@ -6,19 +6,29 @@ router.get('/', (_request, response) => {
     response.render('unauthenticated/index', { });
   });
 */
-  /* GET signup page. */
-router.get('/signup', (_request, response) => {
-    response.render('unauthenticated/signup', { });
-  });
   
-  /* GET login page. */
+  /* GET login get page. */
   router.get('/login', (_request, response) => {
       response.render('unauthenticated/login', { });
     });
 
-    /* GET register page. */
+  /* GET login post page. */
+  router.post('/login', (request, response) => {
+    const {username, password } = request.body;
+
+    response.json({username, password}); 
+  }); 
+
+    /* GET register get page. */
   router.get('/register', (_request, response) => {
     response.render('unauthenticated/register', { });
+  });
+
+  /* GET register post page. */
+  router.post('/register', (request, response) => {
+    const {username, password } = request.body;
+
+    response.json({username, password}); 
   });
 
 module.exports = router;
