@@ -8,14 +8,14 @@ if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
 }
 
+const sessionInstance = require("./app-config/sessions"); 
+
 const homeRouter = require('./routes/unauthenticated/index');
 const authenticationRouter = require('./routes/unauthenticated/authentication');
 const lobbyRouter = require('./routes/authenticated/lobby');
 const gamesRouter = require('./routes/authenticated/games');
 
-
 const testsRouter = require('./routes/tests');
-
 
 const app = express();
 
@@ -28,6 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sessionInstance); 
 
 app.use('/', homeRouter);
 app.use('/auth', authenticationRouter);
