@@ -27,7 +27,7 @@ router.get('/', (_request, response) => {
   /* GET register post page. */
   router.post('/register', (request, response) => {
     const {username, password } = request.body;
-
+    // needed for retrieving input 
     response.json({username, password}); 
   });
 
