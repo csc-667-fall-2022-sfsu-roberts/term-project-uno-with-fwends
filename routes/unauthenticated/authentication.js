@@ -1,5 +1,6 @@
 const express = require('express');
-const { request } = require('../../app');
+//const { request } = require('../../app');
+const Users = require("../../db/users"); 
 const router = express.Router();
 
 /* GET Home page. 
@@ -19,11 +20,16 @@ router.get('/', (_request, response) => {
   router.post('/login', (request, response) => {
     const {username, password } = request.body;
 
-    request.session.authenticated = true;
-    request.session.username = username;   
+    Users.login({ username, password})
+    .then(({ id, email }) =>{
+      request.session.authenticated = true;
+      request.session.username = email;
+      request.session.user_id = id;
 
-    response.redirect("/auth/login") 
-  }); 
+      response.redirect("/lobby");
+  })
+    .catch((_error) => response.redirect("/auth/login")); 
+  });
 
     /* GET register get page. */
   router.get('/register', (request, response) => {
@@ -36,11 +42,15 @@ router.get('/', (_request, response) => {
   router.post('/register', (request, response) => {
     const {username, password } = request.body;
 
-    request.session.authenticated = true; //sessions middleware for encripting/decrypting cookkes
-    request.session.username = username;
+    Users.register({ username, password})
+    .then(({ id, email }) =>{
+      request.session.authenticated = true;
+      request.session.username = email;
+      request.session.user_id = id;
 
-    response.redirect("/auth/register") // needed for retrieving input 
-
+      response.redirect("/lobby");
+  })
+    .catch((_error) => response.redirect("/auth/register")); 
   });
 
 module.exports = router;
