@@ -2,12 +2,6 @@ const express = require('express');
 //const { request } = require('../../app');
 const Users = require("../../db/users"); 
 const router = express.Router();
-
-/* GET Home page. 
-router.get('/', (_request, response) => {
-    response.render('unauthenticated/index', { });
-  });
-*/
   
   /* GET login get page. */
   router.get('/login', (request, response) => {
@@ -51,6 +45,12 @@ router.get('/', (_request, response) => {
       response.redirect("/lobby");
   })
     .catch((_error) => response.redirect("/auth/register")); 
+  });
+  
+  router.get('/logout', (request, response) => {
+    request.session.destroy( (_error) => {
+      response.redirect('/');
+    }); 
   });
 
 module.exports = router;

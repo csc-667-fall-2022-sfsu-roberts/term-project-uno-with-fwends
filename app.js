@@ -9,6 +9,7 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 const sessionInstance = require("./app-config/sessions"); 
+const protect = require("./app-config/protect"); 
 
 const homeRouter = require('./routes/unauthenticated/index');
 const authenticationRouter = require('./routes/unauthenticated/authentication');
@@ -32,8 +33,8 @@ app.use(sessionInstance);
 
 app.use('/', homeRouter);
 app.use('/auth', authenticationRouter);
-app.use('/lobby', lobbyRouter);
-app.use('/games', gamesRouter);
+app.use('/lobby', protect, lobbyRouter);
+app.use('/games', protect, gamesRouter);
 app.use('/tests', testsRouter);
 
 // catch 404 and forward to error handler
