@@ -9,6 +9,7 @@ Justin Paras
 Jose Quinteros
 
 # How To Run 
+TBA
 
 ## Features
   - Create an Account 
