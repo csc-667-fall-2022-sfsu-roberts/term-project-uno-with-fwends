@@ -9,3 +9,18 @@ Justin Paras
 Jose Quinteros
 
 # How To Run 
+
+## Features
+  - Create an Account 
+  - Login to an Account
+  - Create a game
+  - Join a game
+  - Global Chat
+  - Private Chat
+
+## Technologies
+  - PostgreSQL
+  - Express
+  - Socket.io
+  - NodeJS
+  
