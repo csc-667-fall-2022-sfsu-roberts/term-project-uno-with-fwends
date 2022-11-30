@@ -1,15 +1,15 @@
 extends layout
 
 block content
-  h1 Register (#{username})
+  //- h1 Register (#{username})
 
   form(method="post" action="/auth/register")
-    div
-      label(for="username")
-      input(type="text" name="username" id="username")
-    div
-      label(for="password")
-      input(type="password" name="password" id="password")
-
-    div 
-      input(type="submit" value="Register")
+    div(class="form-container")
+      div(class="text-box-container")
+        label(for="username")
+        input(class="text-box" type="text" name="username" id="username" placeholder="Input Username")
+      div(class="text-box-container")
+        label(for="password")
+        input(class="text-box" type="password" name="password" id="password" placeholder="Input Password")
+      div(class="submit-btn-container")
+        input(class="submit-btn" src="/images/button_register.png" alt="Register" type="image" value="Register")
