@@ -12,7 +12,7 @@ const initialize = (httpServer, app) => {
     io.use((socket, next) => {
         const session = socket.request.session;
 
-        if(session !== undefined && session.authenticated == true){
+        if(session !== undefined && session.authenticated === true){
             next(); 
         } else {
             next(new Error("Unauthorized"));

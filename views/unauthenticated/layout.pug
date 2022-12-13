@@ -4,7 +4,9 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    ul 
+  nav#navbar-default
+    div.container-fluid
+      ul.navbar-header
         li
             a(href="/") Home
         li
@@ -14,4 +16,4 @@ html
         li
             a(href="/lobby") Lobby (authenticated)
 
-    block content  
+  block content  

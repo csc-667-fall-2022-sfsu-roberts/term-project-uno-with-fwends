@@ -74,8 +74,43 @@ player-hand{
   background-position-x: 0px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
+li {
+  float: left;
+}
 
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* this works !!!
+body {
+  background-image: url("../images/uno_wallpaper.jpg");
+  
+} */
+
+body {
+  color: white;
+  background-image: url("../images/uno_wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 
 
 
