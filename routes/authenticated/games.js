@@ -14,8 +14,22 @@ router.post("/create", (request, response) => {
     .catch((error) => {
       console.log(error);
       response.status(500).send(); 
+    });
+}); 
+
+router.post("/:id/join", (request, response) => {
+  const {id: game_id} = request.params; 
+  const { user_id } = request.session;
+
+  Games.join(game_id, user_id)
+    .then(() => {
+      response.redirect(`/games/${game_id}`); 
     })
-})
+    .catch((error) => {
+      console.log(error);
+      response.status(500).send(); 
+    });
+}); 
 
 /* GET home page. */
 router.get("/:id", (request, response) => {
