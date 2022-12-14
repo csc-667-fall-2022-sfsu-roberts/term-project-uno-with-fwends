@@ -30,7 +30,14 @@ module.exports = {
 					key: 'id',
 				},
 			},
-			
+			location: {
+				type: Sequelize.ENUM("DECK", "HAND", "DISCARD"),
+				allowNull: false,
+			},
+			order: {
+				type: Sequelize.INTEGER, 
+				allowNull: false,
+			},
 		});
 	},
 	
