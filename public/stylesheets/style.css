@@ -98,19 +98,15 @@ li a:hover {
   background-color: #111;
 }
 
-/* this works !!!
-body {
-  background-image: url("../images/uno_wallpaper.jpg");
-  
-} */
 
-body {
+/* this works !!!  */
+/* body {
   color: white;
   background-image: url("../images/uno_wallpaper.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-}
+} */
 
 
 
