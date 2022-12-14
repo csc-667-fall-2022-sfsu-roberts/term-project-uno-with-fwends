@@ -10,7 +10,20 @@ module.exports = {
 				autoIncrement: true,
 				allowNull: false,
 			},
-			
+			value: {
+				type: Sequelize.ENUM(
+				"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX",
+				"SEVEN", "EIGHT", "NINE", "DRAW_TWO", "DRAW_FOUR", "REVERSE", "SKIP",
+				"REVERSE"),
+				allowNull: false,
+			},
+			color: {
+				type: Sequelize.ENUM(
+				"BLUE", "RED", "GREEN", "YELLOW", "BLACK"),
+			allowNull: false,
+			},
+		});
+	},
 			
 			
 			
