@@ -1,15 +1,39 @@
 const db = require("../index");
+const SQL = require("./sql"); 
 
-const CREATE_SQL = "INSERT INTO games (title) VALUES (${title}) RETURNING id";
+const shuffle = (array) => {
+  let currentIndex = array.length, 
+  randomIndex; 
 
-const ADD_USER_SQL =
-  "INSERT INTO game_users (game_id, user_id) VALUES (${game_id}, ${user_id}) RETURNING game_id";
+  // while there remain elements to shuffle
+  while(currentIndex !== 0){
+    // pick a remaining element. 
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
+    // and now swap it with the current element 
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+};
 
 const create = (user_id, title = "Game") =>{
     return db
-         .one(CREATE_SQL, { title })
-         .then(({ id }) => db.one(ADD_USER_SQL, {game_id: id, user_id})); 
+         .one(SQL.CREATE_SQL, { title })
+         .then(({ id }) => db.one(SQL.ADD_USER_SQL, {game_id: id, user_id} ))
+         .then(({game_id}) => Promise.all([
+           db.many(SQL.GET_DECK),
+           game_id
+         ]))
+         .then(([cards, game_id]) => Promise.all([
+           game_id,
+           ...shuffle(cards).map(( { id }) => db.none(SQL.INITIALIZE_CARD, {game_id, card_id: id}))
+         ]))
+         .then(([ game_id]) => ({ game_id }) ); 
 };
 
 module.exports = create;

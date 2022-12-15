@@ -22,7 +22,7 @@ const initialize = (httpServer, app) => {
     io.on("connection", (socket) => {
         console.log({
             message: "Connection happened",
-            session_id: socket.request.session, 
+            session: socket.request.session, 
         }); 
     });
     app.io = io; 

@@ -1,6 +1,7 @@
 extends layout
 
 block content
+<<<<<<< HEAD
   //h1 Lobby page 
   h1 Welcome #{username}##{user_id}!
   div
@@ -34,3 +35,40 @@ block content
       #messages
       div 
         input#message(type="text")
+=======
+  h1 Lobby page 
+
+  #game-lists
+    #create-game
+      form(action="/games/create" method="post")
+        label(for="title")
+        input(type="text" name="title")
+        button(type="submit") Create Game
+    
+    h2 Active Games
+    #active-game-list
+      ul
+        each game in games.active
+          li 
+            a(href=`/games/${game.id}`)= game.title
+
+    h2 Joinable Games
+    #joinable-game-list
+      ul
+        each game in games.joinable
+          li
+            form(action=`/games/${game.id}/join` method="post")
+              button(type="submit") Join #{game.title || game.id}
+
+  template#message-content
+    .chat-message
+      span.username
+      span.message
+      span.timestamp
+      
+  #chat
+    h2 Chat
+    #messages
+    div 
+      input#message(type="text")
+>>>>>>> jose

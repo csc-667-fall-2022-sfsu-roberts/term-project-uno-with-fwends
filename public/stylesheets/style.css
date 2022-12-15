@@ -181,18 +181,18 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color:#74992e;
 }
 
 
 /* this works !!!  */
-/* body {
+body {
   color: white;
   background-image: url("../images/uno_wallpaper.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-} */
+} 
 
 
 
