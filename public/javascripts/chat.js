@@ -7,13 +7,17 @@ const messageTemplate = document.querySelector("#message-content");
 
 input.addEventListener("keydown", (event) => {
     if(event.keyCode === 13){
-        const message = event.target.value; 
+        //const message = event.target.value; 
 
         fetch("/chat/0", { 
             method: "post", 
             header: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({message}),
-        });
+            body: JSON.stringify({message: event.target.value}),
+        })
+        .then(() => {
+            document.querySelector("#message").value = "";
+          })
+          .catch((error) => console.log(error));
     }
 });
 
