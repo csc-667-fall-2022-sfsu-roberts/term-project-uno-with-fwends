@@ -3,7 +3,6 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="socket.io/socket.io.js")
   body
   
     ul 
@@ -12,9 +11,8 @@ html
         li
             a(href="/lobby") Lobby
         li
-            a(href="/games/42") Game page 
-        li 
-            a(href="/auth/logout") Logout 
+            a(href="/games/42") Game page
+    block content  
 
-    block content
-    script(src="/javascripts/chat.js")
+  footer(class="footer")
+    p &copy; 2022 Team J - Uno With Friends 

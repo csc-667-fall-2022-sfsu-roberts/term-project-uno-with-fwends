@@ -24,21 +24,33 @@ const DUAL_COLOR_CARD_TYPES = [
   DRAW_TWO,
   REVERSE,
   SKIP,
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	DRAW_TWO,
+	REVERSE,
+	SKIP,
 ];
 
 const NO_COLOR_CARD_TYPES = [DRAW_FOUR, WILD];
 
-const BLUE = "blue";
-const YELLOW = "yellow";
-const RED = "red";
-const GREEN = "green";
-const NONE = "none";
+const BLUE = 'blue';
+const YELLOW = 'yellow';
+const RED = 'red';
+const GREEN = 'green';
+const NONE = 'none';
 
 const CARD_COLORS = { BLUE, YELLOW, RED, GREEN, NONE };
 
 module.exports = {
-  SINGLE_COLOR_CARD_TYPES,
-  DUAL_COLOR_CARD_TYPES,
-  NO_COLOR_CARD_TYPES,
-  CARD_COLORS,
+	SINGLE_COLOR_CARD_TYPES,
+	DUAL_COLOR_CARD_TYPES,
+	NO_COLOR_CARD_TYPES,
+	CARD_COLORS,
 };

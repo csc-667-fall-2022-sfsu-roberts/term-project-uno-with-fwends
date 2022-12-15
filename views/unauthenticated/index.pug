@@ -1,4 +1,10 @@
 extends layout
 
 block content
-  h1 Home
+  // h1 Home
+  .logo
+  div(class="button-container")
+    a(class="home-btn" href="/auth/register")
+      img(src='/images/button_register.png' alt='Register')
+    a(class="home-btn" href="/auth/login")
+      img(src='/images/button_login.png' alt='Login')
