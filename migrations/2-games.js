@@ -4,11 +4,16 @@
 module.exports = {
 	async up(queryInterface, Sequelize) {
 	
-		return queryInterface.createTable('games', {
+		await queryInterface.createTable('games', {
 		game_id: {
 			type: Sequelize.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
+			allowNull: false,
+		},
+		create_date: {
+			type: Sequelize.DATE,
+			defaultValue: Sequelize.literal('NOW()'),
 			allowNull: false,
 		},
 		started: {
@@ -20,12 +25,17 @@ module.exports = {
 			type: Sequelize.BOOLEAN,
 			allowNull: false,
 			
+		},
+		join_id: {
+			type: Sequelize.STRING,
+			defaultValue: '',
+			allowNull: false,
 		}
 		});
 	},
 	
 	async down (queryInterface, Sequelize) {
-		return queryInterface.dropTable('games');
+		await queryInterface.dropTable('games');
 	
 	}
 };
