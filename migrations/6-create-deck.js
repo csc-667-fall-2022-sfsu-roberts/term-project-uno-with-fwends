@@ -29,6 +29,10 @@ module.exports = {
 	        color: wildColor,
 	        value: wild,
 	      });
+		const powerup = [
+				"REVERSE", "DRAW2", "SKIP",
+		];
+		
     }
 	
 		
