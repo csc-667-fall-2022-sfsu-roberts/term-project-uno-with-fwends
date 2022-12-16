@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router(); 
 
-/* GET home page. */
 router.post("/:id", (request, response) => {
   const { id } = request.params; 
   const { username } = request.session; 
@@ -16,24 +15,29 @@ router.post("/:id", (request, response) => {
 module.exports = router;  
 
 
+
+
+
+
+
 /* const express = require('express');
 const router = express.Router();
 
-router.post('/:id', (req, res, next) =>{
-  const {id} = req.params;
-  const {message} = req.body;
-  const {username} = req.session;
-  const timestamp = Date.now();
+router.post('/:id', (request, response) => {
+	const { id } = request.params;
+	const { message } = request.body;
+	const { username } = request.session;
+	const timestamp = Date.now();
+	const { userId } = request.session;
 
-  req.app.io.emit(`chat:${id}`, {
-    sender: username,
-    message,
-    timestamp,
-  })
+	request.app.io.emit(`chat:${id}`, {
+		sender: username,
+		user: userId,
+		message,
+		timestamp,
+	});
 
-  res.sendStatus(200);
-
-})
-
+	response.sendStatus(200);
+});
 
 module.exports = router;  */
