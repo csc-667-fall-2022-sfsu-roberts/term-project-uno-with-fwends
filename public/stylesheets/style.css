@@ -1,0 +1,128 @@
+
+player-hand{
+  position: relative; 
+
+}
+
+.card {
+  position: absolute;
+  background-image: url("/images/uno_cards_sprite.png");
+  height: 258px; 
+  width: 176px;
+}
+
+.card:nth-child(2){
+  left: 30px; 
+}
+.card:nth-child(3){
+  left: 60px; 
+}
+.card:nth-child(4){
+  left: 90px; 
+}
+.card:nth-child(5){
+  left: 120px; 
+}
+.card:nth-child(6){
+  left: 150px; 
+}
+
+.red {
+  background-position-y: 0px;
+}
+
+.blue {
+  background-position-y: -285px;
+}
+
+.yellow {
+  background-position-y: -570px;
+}
+
+.green {
+  background-position-y: -855px;
+}
+
+.black {
+  background-position-y: -1140px;
+}
+
+/* select cards by x and y position */
+
+
+.one {
+  background-position-x: -200px;
+}
+
+.two {
+  background-position-x: -400px;
+}
+
+.three {
+  background-position-x: -600px;
+}
+
+.four {
+  background-position-x: -800px;
+}
+
+.five {
+  background-position-x: -1000px;
+}
+
+.special {
+  background-position-x: 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:#74992e;
+}
+
+
+/* this works !!!  */
+body {
+  color: white;
+  background-image: url("../images/uno_wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+} 
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
